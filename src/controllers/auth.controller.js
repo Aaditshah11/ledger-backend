@@ -54,7 +54,7 @@ async function userLoginController(req, res) {
     if (!user)
       return res.status(401).json({ message: "email or password is invalid" });
 
-    const isValidPassword = user.comparePassword(password);
+    const isValidPassword = await user.comparePassword(password);
 
     if (!isValidPassword)
       return res.status(401).json({ message: "email or password is invalid" });

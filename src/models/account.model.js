@@ -11,6 +11,7 @@ const accountSchema = new mongoose.Schema(
 
     status: {
       type: String,
+      default: "ACTIVE",
       enum: {
         values: ["ACTIVE", "FROZEN", "CLOSED"],
         message: "Enter a valid account status",
